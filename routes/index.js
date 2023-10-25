@@ -1,11 +1,14 @@
 const router = require('express').Router();
-const userRoutes = require('./user-routes');
-const thoughtRoutes = require('./thought-routes');
 
-// Add `'/users'` prefix to userRoutes
-router.use('/users', userRoutes);
+// Importing the API routes
+const apiRoutes = require('./api');
 
-// Add `'/thoughts'` prefix to thoughtRoutes
-router.use('/thoughts', thoughtRoutes);
+// Prefix all routes defined in the API directory with "/api"
+router.use('/api', apiRoutes);
+
+// In case any route is accessed that isn't defined, respond with a 404 status
+router.use((req, res) => {
+  res.status(404).send('404 Error!');
+});
 
 module.exports = router;
