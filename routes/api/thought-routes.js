@@ -1,34 +1,29 @@
 const router = require('express').Router();
 const {
-  getAllThoughts,
-  getThoughtById,
+  getThoughts,
+  getSingleThought,
   createThought,
   updateThought,
   deleteThought,
-  addReaction,
-  removeReaction
-} = require('../../controllers/thought-controller');
+  addThoughtResponse,
+  removeThoughtResponse,
+} = require('../../controllers/thoughtController');
 
-// Set up GET all and POST at /api/thoughts
-router
-  .route('/')
-  .get(getAllThoughts)
-  .post(createThought);
+//http://localhost:3001/api/Thoughts
+// /api/Thought
+router.route('/').get(getThoughts).post(createThought);
 
-// Set up GET one, PUT, and DELETE at /api/thoughts/:id
+// /api/Thought/:ThoughtId
 router
-  .route('/:id')
-  .get(getThoughtById)
+  .route('/:ThoughtId')
+  .get(getSingleThought)
   .put(updateThought)
   .delete(deleteThought);
 
-// Set up POST and DELETE for reactions at /api/thoughts/:thoughtId/reactions
-router
-  .route('/:thoughtId/reactions')
-  .post(addReaction);
+// /api/Thought/:ThoughtId/response
+router.route('/:ThoughtId/responses').post(addThoughtResponse);
 
-router
-  .route('/:thoughtId/reactions/:reactionId')
-  .delete(removeReaction);
+// /api/Thought/:ThoughtId/tags/:tagId
+router.route('/:ThoughtId/tags/:tagId').delete(removeThoughtResponse);
 
 module.exports = router;
