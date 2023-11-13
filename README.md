@@ -1,69 +1,59 @@
-# Social Network API
+# E-Commerce Backend Application
 
-A RESTful API built with Express.js and MongoDB that simulates a basic social networking platform.
+Welcome to the E-Commerce Backend Application, a system that leverages MySQL2 and Sequelize to create and manage tables for an e-commerce database. Additionally, it provides an Express API for handling all CRUD operations for categories, products, and tags. With this application, users can seamlessly add, view, update, and delete data within their e-commerce platform.
 
 ## Table of Contents
 
-- [Description](#description)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Routes](#api-routes)
-- [Video Walkthrough](#video-walkthrough)
-- [License](#license)
-- [Contributing](#contributing)
-- [Questions](#questions)
+* [Technologies](#technologies)
+* [Usage](#usage)
+* [Functionality](#functionality)
+* [Future Development](#future-development)
+* [Video Walkthrough](#video-walkthrough)
+* [License](#license)
 
-## Description
+## Technologies
 
-This API supports a simple social networking application where users can share their thoughts, react to friends' thoughts, and create a friend list. It demonstrates the power of a NoSQL database, using MongoDB, to handle large amounts of unstructured data efficiently.
-
-## Technologies Used
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-
-## Installation
-
-1. Make sure you have MongoDB installed on your machine.
-2. Clone the repository.
-3. Navigate to the directory and install dependencies with `npm install`.
-4. Run the server with `npm start`.
+- **MySQL**
+- **Sequelize**
+- **Node.js**
+- **Express**
+- **JavaScript**
+- **Insomnia**
 
 ## Usage
 
-The server will start and connect to the MongoDB database. You can test the API routes using tools like Insomnia or Postman.
+### App Initialization
 
-## API Routes
+To get started with this application, follow these steps:
 
-### Users
+1. After cloning this repository or copying its code, run `npm install` to install the required Node modules.
+2. Configure your database connection in `connection.js`. You can use a `.env` file for this purpose.
+3. Run the following commands to initialize your database:
+   ```
+   mysql -u root -p
+   source ./db/schema.sql;
+   exit
+   ```
+4. Seed the database with sample data using `npm run seed`.
+5. Start the application by running `npm start`. It will listen on port 3001.
 
-- **GET** all users: `/api/users`
-- **GET** a single user by ID: `/api/users/:id`
-- **POST** a new user: `/api/users`
-- **PUT** to update a user by its ID: `/api/users/:id`
-- **DELETE** a user by its ID: `/api/users/:id`
-- **POST** add a friend: `/api/users/:userId/friends/:friendId`
-- **DELETE** remove a friend: `/api/users/:userId/friends/:friendId`
+### Functionality
+ ![Screenshot of project](./Assets/13-orm-homework-demo-01.gif)
+ ![Screenshot of project](./Assets/13-orm-homework-demo-02.gif)
+ ![Screenshot of project](./Assets/13-orm-homework-demo-03.gif)
 
-### Thoughts
 
-- ... _(and so on for each route)_
+### Future Development
 
-## Video Walkthrough
+In the future, the application can be enhanced by:
 
-_Link to video walkthrough (e.g. on YouTube or another platform)._
+- Developing a user-friendly front-end interface to complement the existing API.
+- Expanding functionality to support additional features and improvements.
 
-## License
+# Video Walkthrough
 
-This project is licensed under the MIT License.
+[Video Demonstration](https://watch.screencastify.com/v/kqLWUX6EustGbNtSw7MN)
 
-## Contributing
+### License
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Questions
-
-For any questions or feedback, please contact [Your Name / Email].
+This project is licensed under the MIT License. 
